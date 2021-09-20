@@ -1,11 +1,7 @@
-// 1. Install dependencies DONE
-// 2. Import dependencies DONE
-// 3. Setup webcam and canvas DONE
-// 4. Define references to those DONE
-// 5. Load posenet DONE
-// 6. Detect function DONE
-// 7. Drawing utilities from tensorflow DONE
-// 8. Draw functions DONE
+// Download the models in the publix folder
+// Import the models and load them before the components rendres => useEffect
+// Show the video and put in a canvas
+//
 
 import React, { useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
@@ -13,58 +9,30 @@ import Button from "@mui/material/Button";
 // 1
 import * as tf from "@tensorflow/tfjs";
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";
-
-import Webcam from "react-webcam";
+import * as faceapi from "face-api.js";
 import { drawMesh } from "./utilities";
-
 const SessionPage: React.FC<any> = () => {
+  interface Option {
+    audio: boolean;
+    video: boolean;
+  }
+
   const webcamRef: React.MutableRefObject<any> = useRef(null);
   const canvasRef: React.MutableRefObject<any> = useRef(null);
-  const runFacemesh = async () => {
-    const net = await facemesh.load(
-      facemesh.SupportedPackages.mediapipeFacemesh
-    );
-    setInterval(() => {
-      detect(net);
-    }, 10);
+  const MODEL_URL = "/models";
+  let videoStream;
+  const startVideo = async () => {
+    navigator.mediaDevices
+      .getUserMedia({
+        //audio: true,
+        video: { width: 320 },
+      })
+      .then((stream) => (webcamRef.current.srcObject = stream));
   };
 
-  const detect = async (net: any) => {
-    if (
-      typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null &&
-      webcamRef.current.video.readyState === 4
-    ) {
-      // Get Video Properties
-      const video = webcamRef.current.video;
-      const videoWidth = webcamRef.current.video.videoWidth;
-      const videoHeight = webcamRef.current.video.videoHeight;
-
-      // Set video width
-      webcamRef.current.video.width = videoWidth;
-      webcamRef.current.video.height = videoHeight;
-
-      // Set canvas width
-      canvasRef.current.width = videoWidth;
-      canvasRef.current.height = videoHeight;
-
-      // Make Detections
-      // OLD MODEL
-      //       const face = await net.estimateFaces(video);
-      // NEW MODEL
-      const face = await net.estimateFaces({ input: video });
-      console.log(face);
-
-      // Get canvas context
-      const ctx = canvasRef.current.getContext("2d");
-      requestAnimationFrame(() => {
-        drawMesh(face, ctx);
-      });
-    }
-  };
   useEffect(() => {
-    runFacemesh();
-  }, []);
+    startVideo();
+  });
   return (
     <div style={{ width: "100%" }}>
       <Box
@@ -86,7 +54,7 @@ const SessionPage: React.FC<any> = () => {
             position: "relative",
           }}
         >
-          <Webcam
+          <video
             ref={webcamRef}
             style={{
               position: "absolute",
@@ -96,18 +64,21 @@ const SessionPage: React.FC<any> = () => {
               textAlign: "center",
               width: 250,
               height: 250,
+              zIndex: 3,
             }}
-          />
-          <canvas
+            autoPlay
+          ></video>
+          {/*     <canvas
             ref={canvasRef}
             style={{
               position: "absolute",
               textAlign: "center",
               left: "0",
               width: 250,
-              height: 250,
+              height: 187,
+              backgroundColor: "red",
             }}
-          />
+          /> */}
         </Box>
         <Box
           sx={{
