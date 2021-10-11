@@ -33,14 +33,32 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Webrtc stands for Real-Time Communication.
-WebRTC makes the peer-to-peer communication between browsers possible. Using the NAT traversal framework — ICE, we are able find the most appropriate route between the browsers and make them communicate without mediator.
-Before Webrtf
 
--------
 
 # Web rtc.
 
+Webrtc stands for Real-Time Communication.
+WebRTC makes the peer-to-peer communication between browsers possible. Using the NAT ( Network Address Translation) traversal framework — ICE, we are able find the most appropriate route between the browsers and make them communicate without mediator.
+Before Webrtc
+It uses the signaling (sip protocole) managed by peers.js
+
+**Sip protocol:**
+
+Protocole: A protocol is a set of universal standards for computer communication.
+
+Sip : is a live communication phone video ect. Example:  phone calls with Voice over IP, or VoIP
+peerjs: manages the sip communcation. Sip resides on the application layer of the protocole.
+
+How it works: The Session Description Protocol, or SDP, handles media details. Real-time Transport Protocol, or RTP, handles the delivery of data.SIP starts by initiating a call with one or more people. In this message, the SIP client establishes parameters for the request. It does this using the header fields previously mentioned.
+
+
+What do you need for sip to work?
+
+
+
+
+
+-------
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
