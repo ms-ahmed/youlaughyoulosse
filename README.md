@@ -53,7 +53,8 @@ How it works: The Session Description Protocol, or SDP, handles media details. R
 
 
 What do you need for sip to work?
-
+How it works: 
+The Session Description Protocol, or SDP, handles media details. Real-time Transport Protocol, or RTP, handles the delivery of data. SIP starts by initiating a call with one or more people. In this message, the SIP client establishes parameters for the request. It does this using the header fields previously mentioned.
 
 
 
