@@ -85,6 +85,8 @@ https://www.google.com/search?q=stun+server&rlz=1C1GCEB_enBE962BE962&oq=stun+ser
 https://whatismyipaddress.com/nat
 
 
+https://datatracker.ietf.org/doc/html/rfc3489#page-5
+
 
 -------
 
