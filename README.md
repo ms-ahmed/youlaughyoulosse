@@ -53,9 +53,36 @@ How it works: The Session Description Protocol, or SDP, handles media details. R
 
 
 What do you need for sip to work?
-How it works: 
+**How it works:**
+
 The Session Description Protocol, or SDP, handles media details. Real-time Transport Protocol, or RTP, handles the delivery of data. SIP starts by initiating a call with one or more people. In this message, the SIP client establishes parameters for the request. It does this using the header fields previously mentioned.
 
+PeerJs
+WebRtc Implementation
+src :
+https://grafikart.fr/tutoriels/webrtc-864
+
+https://www.toptal.com/webrtc/taming-webrtc-with-peerjs
+
+https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/setLocalDescription
+
+https://www.baeldung.com/webrtc
+
+https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/onnegotiationneeded
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addStream
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate
+
+https://www.geeksforgeeks.org/interactive-connectivity-establishment-ice/
+
+
+https://www.google.com/search?q=stun+server&rlz=1C1GCEB_enBE962BE962&oq=stun+server&aqs=chrome..69i57j0i512l3j0i22i30l3j69i60.3232j0j4&sourceid=chrome&ie=UTF-8
+
+
+https://whatismyipaddress.com/nat
 
 
 
