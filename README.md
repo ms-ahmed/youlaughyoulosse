@@ -37,7 +37,16 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Web rtc.
 
+
+
+
+
 Webrtc stands for Real-Time Communication.
+
+It is a framework that allows the Peer to Peer communication in the browser. it provides to the browser all the differents components that allows the apps to build their own web rtc.
+
+
+
 WebRTC makes the peer-to-peer communication between browsers possible. Using the NAT ( Network Address Translation) traversal framework — ICE, we are able find the most appropriate route between the browsers and make them communicate without mediator.
 Before Webrtc
 It uses the signaling (sip protocole) managed by peers.js
@@ -58,6 +67,32 @@ What do you need for sip to work?
 The Session Description Protocol, or SDP, handles media details. Real-time Transport Protocol, or RTP, handles the delivery of data. SIP starts by initiating a call with one or more people. In this message, the SIP client establishes parameters for the request. It does this using the header fields previously mentioned.
 
 PeerJs
+Avoid other tools.
+3 compoenents :
+MediaStream with getUserMedia allows access to the user's audio and video devices
+
+PeerConnection implements the network layer and ensures network communication between the browser and the remote target
+
+it is an object
+
+encrypting and decrypting
+
+p2p connection
+
+
+allows us to avoid firewalls
+
+
+
+DataChannel allows the implementation of a network channel that can transfer arbitrary data in a bi-directional way.
+
+Fonctionnement:
+
+
+
+
+
+
 WebRtc Implementation
 src :
 https://grafikart.fr/tutoriels/webrtc-864
